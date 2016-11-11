@@ -8,7 +8,7 @@
  *
  * @author coulh9904
  */
-public class A2Q1 {
+public class Assignment2 {
 
     public int DigitalNum(int N) {
 
@@ -65,7 +65,7 @@ public class A2Q1 {
         //If N mod 2 is 0, we'll need to add a 0 to the string
         if (N % 2 == 0) {
             BinaryS = BinaryS + "0";
-        //If N mod 2 is 1, give the string a 1!
+            //If N mod 2 is 1, give the string a 1!
         } else if (N % 2 == 1) {
             BinaryS = BinaryS + "1";
         }
@@ -75,25 +75,23 @@ public class A2Q1 {
         }
         //Loop it!
         return BinaryConvert(N / 2) + BinaryS;
-    }   
-
-    
+    }
 
     public String Convert(int B, int N) {
         //Everyone's favourite base case
         if (N == 1) {
             return "1";
-        } else if (N == 0){
+        } else if (N == 0) {
             return "";
         }
         //This string will come to hold the converted numbers (>=10)
         String CNum = "";
-        
+
         //If the number turns out to be less than 10, make it s string
         if (N % B < 10) {
             int ans = N % B;
-            CNum = String.valueOf (ans);
-        // if >= 10, convert it to a number
+            CNum = String.valueOf(ans);
+            // if >= 10, convert it to a number
         } else if (N % B == 10) {
             CNum = "A";
         } else if (N % B == 11) {
@@ -110,17 +108,17 @@ public class A2Q1 {
             CNum = "G";
         } else if (N % B == 17) {
             CNum = "H";
-    } else if (N % B == 18) {
+        } else if (N % B == 18) {
             CNum = "I";
-    } else if (N % B == 19) {
+        } else if (N % B == 19) {
             CNum = "J";
-    } else if (N % B == 20) {
+        } else if (N % B == 20) {
             CNum = "K";
         }
         N = N / B;
         //Restart the loop
-        return Convert(B , N) + CNum;
-        
+        return Convert(B, N) + CNum;
+
     }
 
     public boolean IsPalindrome(String S, int Length) {
@@ -141,32 +139,35 @@ public class A2Q1 {
             return false;
         }
     }
-/**
- * @param args the command line arguments
- */
-public static void main(String[] args) {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         // TODO code application logic here
         //Long ago, the four nations lived together in harmony, then, everything changed when the fire nation attacked. Only the avatar, master of all four elements, could stop them. But when the world needed him most, he vanished. A hundred years passed and my brother and I discovered the new Avatar - an Air Bender names Aang. Altjhough his airbending skill were great, he has a lot to learn before he's ready to save anyone.. but I believe, Aang can save the world.
         //Test Question 1
-        A2Q1 Test = new A2Q1();
+        Assignment2 Test = new Assignment2();
         int Q1 = Test.DigitalNum(345355454);
-        System.out.println("Question 1 - " +Q1);
+        System.out.println("Question 1 - " + Q1);
         //Test Question 2
         int Q2 = Test.DigitalRoot(345355454);
-        System.out.println("Question 2 - " +Q2);
+        System.out.println("Question 2 - " + Q2);
         //Test Question 3
         int Q3 = Test.Triangle(12);
-        System.out.println("Question 3 - " +Q3);
+        System.out.println("Question 3 - " + Q3);
         //Test Question 4
         int Q4 = Test.Hailstone(5);
-        System.out.println("Question 4 - " +Q4);
+        System.out.println("Question 4 - " + Q4);
         //Test Question 5
         String Q5 = Test.BinaryConvert(1000);
-        System.out.println("Question 5 - " +Q5);
+        System.out.println("Question 5 - " + Q5);
         //Test Question 6
         String Q6 = Test.Convert(16, 1000);
         System.out.println("Question 6 - " + Q6);
         //Test Question 7
         System.out.println("Q7: " + Test.IsPalindrome("radar", 5));
+        //No time to attempt 8 :(
     }
 }
+//DONE.
